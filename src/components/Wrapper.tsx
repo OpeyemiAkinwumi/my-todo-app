@@ -23,7 +23,7 @@ export default function Wrapper({
   activeState,
 }: // completedTask,
 WrapperProps) {
-  const numItems = data.length;
+  // const numItems = data.length;
 
   function handleSubmit() {
     if (task.trim() === "") return; // Prevent adding empty tasks
