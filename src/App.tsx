@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <main className="w-full h-screen relative">
-      <section className="w-full h-[35%] bg-[url(./src/images/bg-mobile-light.jpg)] dark:bg-[url(./src/images/bg-mobile-dark.jpg)] lg:bg-[url(./src/images/bg-desktop-light.jpg)] dark:lg:bg-[url(./src/images/bg-desktop-dark.jpg)] bg-cover bg-center  "></section>
+      <section className="w-full h-[35%] bg-[url(/images/bg-mobile-light.jpg)] dark:bg-[url(/images/bg-mobile-dark.jpg)] lg:bg-[url(/images/bg-desktop-light.jpg)] dark:lg:bg-[url(/images/bg-desktop-dark.jpg)] bg-cover bg-center  "></section>
       <section className="w-full h-[65%] bg-lg dark:bg-vdb "></section>
 
       <Wrapper
