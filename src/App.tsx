@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Wrapper from "./components/Wrapper";
 import { todoReducer } from "./hooks/todoReducer";
 import { Todo } from "./types/todoTypes";
@@ -6,14 +6,19 @@ import "./App.css";
 
 // type FilterType = "ALL" | "ACTIVE" | "COMPLETED";
 
-const initialState: Todo[] = [];
-
 export default function App() {
+  const initialState: Todo[] = JSON.parse(
+    localStorage.getItem("todos") || "[]"
+  );
   const [data, dispatch] = useReducer(todoReducer, initialState);
   const [task, setTask] = useState("");
   const [filter, setFilter] = useState("ALL");
   // const [activeState, setActiveState] = useState("all");
   let activeState = "all";
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(data));
+  }, [data]); // ✅ Update localStorage whenever `data` changes
 
   const filteredData =
     filter === "active"
